@@ -22,6 +22,13 @@ public class Cars {
         return cars;
     }
 
+    public void move() {
+        for (Car car : cars) {
+            int randomNumber = RandomNumber.pickNumber();
+            car.move(randomNumber);
+        }
+    }
+
     public int size() {
         return cars.size();
     }
