@@ -25,4 +25,9 @@ public class GameResults {
     public GameResult getGameResult(int idx) {
         return gameResults.get(idx);
     }
+
+    public GameResult lastGameResult() {
+        int lastIdx = size() - 1;
+        return getGameResult(lastIdx);
+    }
 }

@@ -8,10 +8,18 @@ public class Game {
     public Game(Cars cars, Progress progress) {
         this.cars = cars;
         this.progress = progress;
+        status = GameStatus.PLAY;
     }
 
-    public void play() {
-        status = GameStatus.PLAY;
+    public GameResults play() {
+        GameResults gameResults = new GameResults();
+
+        for (int i = 0; i < progressCount(); i++) {
+            cars.move();
+            gameResults.addGameResult(new GameResult(cars));
+        }
+
+        return gameResults;
     }
 
     public void end() {

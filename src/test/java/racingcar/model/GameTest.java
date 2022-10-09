@@ -8,12 +8,14 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class GameTest {
     private Game game;
+    private Cars cars;
 
     @BeforeEach
     void setUp() {
         String[] carNames = new String[]{"국산차", "외제차"};
-        Cars cars = new Cars(carNames);
         Progress progress = new Progress(3);
+
+        this.cars = new Cars(carNames);
         this.game = new Game(cars, progress);
     }
 
@@ -36,5 +38,12 @@ public class GameTest {
         game.end();
 
         assertThat(game.getStatus()).isEqualTo(GameStatus.END);
+    }
+
+    @Test
+    void 게임_진행_마지막_결과_확인() {
+        GameResults gameResults = game.play();
+
+        assertThat(gameResults.lastGameResult()).usingRecursiveComparison().isEqualTo(new GameResult(cars));
     }
 }
