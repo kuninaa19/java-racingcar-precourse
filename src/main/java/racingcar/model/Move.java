@@ -7,6 +7,10 @@ public class Move {
         count = 0;
     }
 
+    public Move(int count) {
+        this.count = count;
+    }
+
     public void move(int randomNumber) {
         if (randomNumber >= 4) {
             count++;

@@ -9,6 +9,11 @@ public class Car {
         this.move = new Move();
     }
 
+    public Car(Name name, Move move) {
+        this.move = move;
+        this.name = name;
+    }
+
     public void move(int randomNumber) {
         move.move(randomNumber);
     }
