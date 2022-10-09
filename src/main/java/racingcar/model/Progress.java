@@ -4,13 +4,13 @@ public class Progress {
     private final int count;
 
     public Progress(int count) {
-        if (!validateCountSize(count)) {
-            throw new IllegalArgumentException("[ERROR]");
+        if (!validateCount(count)) {
+            throw new IllegalArgumentException("[ERROR] 0이상의 값을 입력해주세요");
         }
         this.count = count;
     }
 
-    public boolean validateCountSize(int count) {
+    private boolean validateCount(int count) {
         return count > 0;
     }
 
