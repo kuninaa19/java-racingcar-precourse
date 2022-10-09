@@ -6,6 +6,10 @@ import java.util.List;
 public class Cars {
     private final List<Car> cars;
 
+    public Cars() {
+        this.cars = new ArrayList<>();
+    }
+
     public Cars(String[] carNames) {
         this.cars = mapCars(carNames);
     }
@@ -29,7 +33,15 @@ public class Cars {
         }
     }
 
+    public void addCar(Car car) {
+        this.cars.add(car);
+    }
+
     public int size() {
         return cars.size();
+    }
+
+    public Car getCar(int idx) {
+        return cars.get(idx);
     }
 }
