@@ -20,4 +20,8 @@ public class Move {
     public int getMove() {
         return count;
     }
+
+    public boolean matchMoveCount(Move move) {
+        return this.count == move.count;
+    }
 }

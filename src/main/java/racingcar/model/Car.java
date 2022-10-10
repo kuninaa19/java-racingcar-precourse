@@ -25,4 +25,12 @@ public class Car {
     public String getName() {
         return this.name.getName();
     }
+
+    public Car compareEqualMove(Move move) {
+        if (this.move.matchMoveCount(move)) {
+            return this;
+        }
+
+        return null;
+    }
 }

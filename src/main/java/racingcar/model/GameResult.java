@@ -20,7 +20,24 @@ public class GameResult {
         return result;
     }
 
+    public Cars winners() {
+        Cars winners = new Cars();
+
+        for (int i = 0; i < cars.size(); i++) {
+            Car winner = cars.getCar(i).compareEqualMove(cars.highestMove());
+
+            winners.addCar(winner);
+        }
+
+        return winners;
+    }
+
     public Cars geResult() {
         return cars;
+    }
+
+
+    public int size() {
+        return cars.size();
     }
 }
