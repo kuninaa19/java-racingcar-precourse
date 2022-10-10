@@ -1,11 +1,13 @@
 package racingcar.model;
 
+import racingcar.utils.ErrorHandler;
+
 public class Progress {
     private final int count;
 
     public Progress(int count) {
         if (!validateCount(count)) {
-            throw new IllegalArgumentException("[ERROR] 0이상의 값을 입력해주세요");
+            throw new IllegalArgumentException(ErrorHandler.PROGRESS_COUNT_UNDER_ZERO_ERROR);
         }
         this.count = count;
     }

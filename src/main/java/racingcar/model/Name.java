@@ -1,5 +1,7 @@
 package racingcar.model;
 
+import racingcar.utils.ErrorHandler;
+
 public class Name {
     private final String name;
     private static final int minSize = 1;
@@ -7,7 +9,7 @@ public class Name {
 
     public Name(String name) {
         if (!validateNameSize(name)) {
-            throw new IllegalArgumentException("[ERROR] 이름은 1자 이상 5자 이하로 작성해주세요");
+            throw new IllegalArgumentException(ErrorHandler.NAME_LENGTH_ERROR);
         }
         this.name = name;
     }

@@ -1,6 +1,7 @@
 package racingcar.view;
 
 import camp.nextstep.edu.missionutils.Console;
+import racingcar.utils.ErrorHandler;
 
 public class InputView {
     public static String[] inputCarNames() {
@@ -12,7 +13,7 @@ public class InputView {
         try {
             return Integer.parseInt(count);
         } catch (IllegalArgumentException e) {
-            throw new IllegalArgumentException("[ERROR] 정수를 넣어주세요");
+            throw new IllegalArgumentException(ErrorHandler.INPUT_INTEGER_ERROR);
         }
     }
 
