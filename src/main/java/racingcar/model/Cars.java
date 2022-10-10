@@ -51,7 +51,7 @@ public class Cars {
         int highestMoveCount = 0;
 
         for (int i = 0; i < size() - 1; i++) {
-            highestMoveCount = Math.max(highestMoveCount, this.getCar(i + 1).getMove());
+            highestMoveCount = Math.max(highestMoveCount, this.getCar(i).getMove());
         }
 
         return new Move(highestMoveCount);
