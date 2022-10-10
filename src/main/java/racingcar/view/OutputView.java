@@ -20,8 +20,8 @@ public class OutputView {
         System.out.println("");
     }
 
-    public static void printErrorMessage(Exception e) {
-        System.out.println(e.toString());
+    public static void printErrorMessage(String errorMessage) {
+        System.out.println(errorMessage);
     }
 
     public static void printPlayerMove(Car car) {

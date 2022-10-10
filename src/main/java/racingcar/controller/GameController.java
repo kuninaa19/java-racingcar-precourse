@@ -11,7 +11,7 @@ public class GameController {
         try {
             return new Cars(InputView.inputCarNames());
         } catch (IllegalArgumentException e) {
-            OutputView.printErrorMessage(e);
+            OutputView.printErrorMessage(e.getMessage());
         }
 
         return prepareCars();
@@ -23,7 +23,7 @@ public class GameController {
             int count = InputView.inputProgressCount();
             return new Progress(count);
         } catch (IllegalArgumentException e) {
-            OutputView.printErrorMessage(e);
+            OutputView.printErrorMessage(e.getMessage());
         }
         return prepareProgressCount();
     }
