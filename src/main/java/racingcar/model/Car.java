@@ -18,10 +18,6 @@ public class Car {
         move.move(randomNumber);
     }
 
-    public int getMove() {
-        return move.getMove();
-    }
-
     public String getName() {
         return this.name.getName();
     }
@@ -34,7 +30,7 @@ public class Car {
         return null;
     }
 
-    public Move tempMove(){
+    public Move getMove(){
         return move;
     }
 }

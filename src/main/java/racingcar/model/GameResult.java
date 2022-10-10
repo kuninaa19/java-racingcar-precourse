@@ -13,7 +13,7 @@ public class GameResult {
         for (int i = 0; i < cars.size(); i++) {
             Car car = cars.getCar(i);
 
-            Car copiedCar = new Car(new Name(car.getName()), new Move(car.getMove()));
+            Car copiedCar = new Car(new Name(car.getName()), new Move(car.getMove().moveCount()));
             result.addCar(copiedCar);
         }
 

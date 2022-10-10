@@ -17,7 +17,7 @@ public class Move {
         }
     }
 
-    public int getMove() {
+    public int moveCount() {
         return count;
     }
 
@@ -28,7 +28,7 @@ public class Move {
     public String replaceMoveCount() {
         StringBuilder s = new StringBuilder("");
 
-        for (int i = 0; i < getMove(); i++) {
+        for (int i = 0; i < moveCount(); i++) {
             s.append("-");
         }
         return s.toString();

@@ -25,7 +25,7 @@ public class OutputView {
     }
 
     public static void printPlayerMove(Car car) {
-        System.out.println(car.getName() + " : " + car.tempMove().replaceMoveCount());
+        System.out.println(car.getName() + " : " + car.getMove().replaceMoveCount());
     }
 
     public static void printWinners(String winners) {

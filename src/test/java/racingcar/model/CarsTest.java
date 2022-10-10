@@ -37,7 +37,7 @@ public class CarsTest {
 
         Move highestMove = cars.highestMove();
 
-        assertThat(highestMove.getMove()).isEqualTo(2);
+        assertThat(highestMove.moveCount()).isEqualTo(2);
     }
 
     @Test
