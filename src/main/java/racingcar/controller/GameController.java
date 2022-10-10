@@ -1,8 +1,6 @@
 package racingcar.controller;
 
-import racingcar.model.Cars;
-import racingcar.model.Game;
-import racingcar.model.Progress;
+import racingcar.model.*;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
 
@@ -32,5 +30,34 @@ public class GameController {
 
     public void play(Cars cars, Progress progress) {
         Game game = new Game(cars, progress);
+
+        GameResults gameResults = game.play();
+        game.end();
+        Cars winners = gameResults.lastGameResult().winners();
+
+        printResult(gameResults, winners);
+    }
+
+    public void printResult(GameResults gameResults, Cars winners) {
+        OutputView.printBlank();
+        OutputView.printResultGuide();
+
+        totalProgressResult(gameResults);
+
+        OutputView.printWinners(winners.totalCarNames());
+    }
+
+    private void totalProgressResult(GameResults gameResults) {
+        for (int i = 0; i < gameResults.size(); i++) {
+            numberOfTryResult(gameResults.getGameResult(i));
+        }
+    }
+
+    public void numberOfTryResult(GameResult gameResult) {
+        for (int i = 0; i < gameResult.size(); i++) {
+            OutputView.printPlayerMove(gameResult.geResult().getCar(i));
+        }
+
+        OutputView.printBlank();
     }
 }

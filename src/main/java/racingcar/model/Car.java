@@ -33,4 +33,8 @@ public class Car {
 
         return null;
     }
+
+    public Move tempMove(){
+        return move;
+    }
 }
