@@ -34,7 +34,9 @@ public class Cars {
     }
 
     public void addCar(Car car) {
-        this.cars.add(car);
+        if (car != null) {
+            this.cars.add(car);
+        }
     }
 
     public int size() {
@@ -43,5 +45,15 @@ public class Cars {
 
     public Car getCar(int idx) {
         return cars.get(idx);
+    }
+
+    public Move highestMove() {
+        int highestMoveCount = 0;
+
+        for (int i = 0; i < size() - 1; i++) {
+            highestMoveCount = Math.max(highestMoveCount, this.getCar(i + 1).getMove());
+        }
+
+        return new Move(highestMoveCount);
     }
 }

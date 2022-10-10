@@ -24,4 +24,19 @@ public class CarsTest {
         }).isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("[ERROR]");
     }
+
+    @Test
+    void 실행결과중_가장_큰_move_도출() {
+        String[] carNames = "국내차,외제차,소형차,대형차,중형차".split(",");
+        int[] moves = new int[]{1, 2, 2, 2, 1};
+        Cars cars = new Cars();
+
+        for (int i = 0; i < carNames.length; i++) {
+            cars.addCar(new Car(new Name(carNames[i]), new Move(moves[i])));
+        }
+
+        Move highestMove = cars.highestMove();
+
+        assertThat(highestMove.getMove()).isEqualTo(2);
+    }
 }
