@@ -56,4 +56,14 @@ public class Cars {
 
         return new Move(highestMoveCount);
     }
+
+    public String totalCarNames() {
+        ArrayList<String> totalCarNames = new ArrayList<>();
+
+        for (int i = 0; i < size(); i++) {
+            totalCarNames.add(getCar(i).getName());
+        }
+
+        return String.join(", ", totalCarNames);
+    }
 }

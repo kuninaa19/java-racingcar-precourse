@@ -39,4 +39,24 @@ public class CarsTest {
 
         assertThat(highestMove.getMove()).isEqualTo(2);
     }
+
+    @Test
+    void 자동차_전체_이름_문자열_출력() {
+        String[] carNames = "국내차,외제차".split(",");
+        Cars cars = new Cars(carNames);
+
+        String carNamesSplitByComma = cars.totalCarNames();
+
+       assertThat(carNamesSplitByComma).contains("국내차, 외제차");
+    }
+
+    @Test
+    void 자동차_이름_문자열_출력() {
+        String[] carNames = "국내차".split(",");
+        Cars cars = new Cars(carNames);
+
+        String carNamesSplitByComma = cars.totalCarNames();
+
+        assertThat(carNamesSplitByComma).contains("국내차");
+    }
 }
