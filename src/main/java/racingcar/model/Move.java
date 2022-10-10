@@ -24,4 +24,13 @@ public class Move {
     public boolean matchMoveCount(Move move) {
         return this.count == move.count;
     }
+
+    public String replaceMoveCount() {
+        StringBuilder s = new StringBuilder("");
+
+        for (int i = 0; i < getMove(); i++) {
+            s.append("-");
+        }
+        return s.toString();
+    }
 }
