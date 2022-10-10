@@ -26,6 +26,16 @@ public class CarsTest {
     }
 
     @Test
+    void 자동차_이름_중복_에러() {
+        String[] carNames = "국내차,국내차".split(",");
+
+        assertThatThrownBy(() -> {
+            Cars cars = new Cars(carNames);
+        }).isInstanceOf(IllegalStateException.class)
+                .hasMessageContaining("[ERROR]");
+    }
+
+    @Test
     void 실행결과중_가장_큰_move_도출() {
         String[] carNames = "국내차,외제차,소형차,대형차,중형차".split(",");
         int[] moves = new int[]{1, 2, 2, 2, 1};
@@ -47,7 +57,7 @@ public class CarsTest {
 
         String carNamesSplitByComma = cars.totalCarNames();
 
-       assertThat(carNamesSplitByComma).contains("국내차, 외제차");
+        assertThat(carNamesSplitByComma).contains("국내차, 외제차");
     }
 
     @Test

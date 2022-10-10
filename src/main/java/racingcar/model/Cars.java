@@ -3,6 +3,8 @@ package racingcar.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import static racingcar.model.Name.checkDuplicateCarNames;
+
 public class Cars {
     private final List<Car> cars;
 
@@ -11,6 +13,7 @@ public class Cars {
     }
 
     public Cars(String[] carNames) {
+        checkDuplicateCarNames(carNames);
         this.cars = mapCars(carNames);
     }
 

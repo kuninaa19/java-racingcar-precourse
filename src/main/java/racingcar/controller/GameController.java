@@ -10,7 +10,7 @@ public class GameController {
     public Cars prepareCars() {
         try {
             return new Cars(InputView.inputCarNames());
-        } catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException | IllegalStateException e){
             OutputView.printErrorMessage(e.getMessage());
         }
 
